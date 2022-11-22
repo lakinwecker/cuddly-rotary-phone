@@ -1,0 +1,3 @@
+[submodule "thirdparty/vivid"]
+	path = thirdparty/vivid
+	url = git@github.com:gurki/vivid.git
