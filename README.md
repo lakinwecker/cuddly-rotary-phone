@@ -5,7 +5,9 @@
 On windows, it fails to build due to a missing include.
 ```
 conan profile new cuddly-rotary-phone --detect
-conan install . -if build/deps/conan --build missing --profile cuddly-rotary-phone -s build_type=RelWithDebInfo
+conan install . -if build/deps/conan --build missing --profile cuddly-rotary-phone -s build_type=Release
+cmake --preset="dev-windows-vs2022"
+cmake --build --preset="dev-windows-vs2022"
 ```
 
 Now open Visual Studio 2022, 17.4.x and try to build the above. You will see that it fails to compile the vivid files because one of them cannot include 
