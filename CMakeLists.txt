@@ -23,6 +23,8 @@ include_directories(SYSTEM thirdparty/vivid/include)
 # New Style conan dependencies
 find_package(nlohmann_json REQUIRED)
 
+
+# In previous versions this TARGET would add the include directories as well!
 set(LIBRARIES nlohmann_json::nlohmann_json)
 
 file(GLOB SOURCES src/main.cpp)

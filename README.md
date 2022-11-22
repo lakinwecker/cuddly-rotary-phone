@@ -10,7 +10,8 @@ conan install . -if build/deps/conan --build missing --profile cuddly-rotary-pho
 
 Now open Visual Studio 2022, 17.4.x and try to build the above. You will see that it fails to compile the vivid files because one of them cannot include 
 ```
-... cuddly-rotary-phone\thirdparty\vivid\src\colormap.cpp(9,1): fatal error C1083: Cannot open include file: 'nlohmann/json.hpp': No such file or directory 
+... cuddly-rotary-phone\src\main.cpp(2,1): fatal error C1083: Cannot open include file: 'nlohmann/json.hpp': No such file or directory 
+
 ```
 
 
