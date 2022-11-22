@@ -5,7 +5,7 @@
 On windows, it fails to build due to a missing include.
 ```
 conan profile new cuddly-rotary-phone --detect
-conan install . -if build/deps/conan --build missing --profile cuddly-rotary-phone -s build_type=Release -br:p=default -br:h=default
+conan install . -if build/deps/conan --build missing --profile cuddly-rotary-phone -s build_type=Release -pr:b=default -pr:h=default
 cmake --preset="dev-windows-vs2022"
 cmake --build --preset="dev-windows-vs2022"
 ```
@@ -24,7 +24,7 @@ It builds fine on linux.
 ```
 conan profile new cuddly-rotary-phone --detect
 conan profile update settings.compiler.libcxx=libstdc++11 cuddly-rotary-phone
-conan install . -if build/deps/conan --build missing --profile cuddly-rotary-phone -s build_type=RelWithDebInfo -br:p=default -br:h=default
+conan install . -if build/deps/conan --build missing --profile cuddly-rotary-phone -s build_type=RelWithDebInfo -pr:b=default -pr:h=default
 cmake --preset="dev-unix"
 cmake --build --preset="dev-unix"
 ```
