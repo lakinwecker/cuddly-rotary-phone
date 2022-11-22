@@ -25,24 +25,6 @@ find_package(nlohmann_json REQUIRED)
 
 set(LIBRARIES nlohmann_json::nlohmann_json)
 
-# vivid library
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-	set(VIVID_COMPILE_OPTIONS ${VIVID_COMPILE_OPTIONS} -Wno-everything)
-elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-	set(VIVID_COMPILE_OPTIONS ${VIVID_COMPILE_OPTIONS} -w) # Turn off all warnings for vivid
-elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
-	set(VIVID_COMPILE_OPTIONS ${VIVID_COMPILE_OPTIONS} /W0) # Turn off all warnings for vivid
-endif()
-file(GLOB VIVID_SOURCES thirdparty/vivid/src/*)
-add_library(vivid ${VIVID_SOURCES})
-target_compile_features(vivid PUBLIC cxx_std_17)
-target_include_directories(vivid PRIVATE ${INCLUDES})
-target_compile_options(vivid PRIVATE ${VIVID_COMPILE_OPTIONS})
-target_link_libraries(vivid nlohmann_json::nlohmann_json) # Allegedly this will add in the appropriate include directories, no?
-
-set(LIBRARIES ${LIBRARIES} vivid)
-
-
 file(GLOB SOURCES src/main.cpp)
 set(INCLUDES ${INCLUDES} src)
 

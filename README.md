@@ -1,16 +1,5 @@
 # Reproduction steps
 
-## Git clone
-Make sure you recursively clone the submodules
-```
-git clone --recursive https://github.com/lakinwecker/cuddly-rotary-phone.git
-```
-Or, after you've cloned:
-```
-git submodule update --init --recursive
-```
-
-
 ## On Windows:
 
 On windows, it fails to build due to a missing include.
