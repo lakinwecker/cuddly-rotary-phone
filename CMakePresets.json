@@ -12,8 +12,8 @@
       "cacheVariables": {
         "CMAKE_MODULE_PATH": "${sourceDir}/build/deps/conan/",
         "CMAKE_PREFIX_PATH": "${sourceDir}/build/deps/conan/",
-	"CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/deps/conan/conan_toolchain.cmake",
-	"CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/deps/conan/conan_toolchain.cmake",
+        "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
         "CMAKE_FIND_PACKAGE_PREFER_CONFIG":  "TRUE"
       }
     },
@@ -55,12 +55,12 @@
       "architecture": "x64",
       "hidden": true
     },
-		{
-			"name": "vs-win64-2022",
-			"generator": "Visual Studio 17 2022",
-			"architecture": "x64",
-			"hidden": true
-		},
+    {
+      "name": "vs-win64-2022",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "hidden": true
+    },
 
     {
       "name": "dev-build",
@@ -114,7 +114,7 @@
       "inherits": [ "cxx-std", "flags-windows", "conan", "dev-build" ],
       "hidden": true,
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       }
     },
     {
@@ -145,7 +145,7 @@
     {
       "name": "dev-windows-vs2022",
       "configurePreset": "dev-windows-vs2022",
-      "configuration": "Release"
+      "configuration": "RelWithDebInfo"
     }
   ]
 }
