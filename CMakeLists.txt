@@ -38,7 +38,7 @@ add_library(vivid ${VIVID_SOURCES})
 target_compile_features(vivid PUBLIC cxx_std_17)
 target_include_directories(vivid PRIVATE ${INCLUDES})
 target_compile_options(vivid PRIVATE ${VIVID_COMPILE_OPTIONS})
-target_link_libraries(vivid nlohmann_json::nlohmann_json)
+target_link_libraries(vivid nlohmann_json::nlohmann_json) # Allegedly this will add in the appropriate include directories, no?
 
 set(LIBRARIES ${LIBRARIES} vivid)
 
